@@ -20,6 +20,7 @@
 Route::get('/', [
     'as' => '/', 'uses' => 'IndexController@showIndex'
 ]);
+//用户登录-路由配置
 Route::group(['namespace' => 'User'], function()
 {
     // Controllers Within The "App\Http\Controllers\User" Namespace
@@ -27,6 +28,8 @@ Route::group(['namespace' => 'User'], function()
         'as' => 'login', 'uses' => 'LoginController@showLogin'
     ]);
 });
+
+//后台用户-路由配置
 Route::group(['namespace' => 'Web'], function()
 {
     /*nav增删改查*/
@@ -60,5 +63,33 @@ Route::group(['namespace' => 'Web'], function()
     ]);
     Route::get('/article/del/{id}', [
         'as' => 'article', 'uses' => 'ArticleController@delArticle'
+    ]);
+
+    //用户端
+    //goods增删改查
+    Route::get('/mobile/goods', [
+        'as' => 'article', 'uses' => 'ArticleController@showArticle'
+    ]);
+});
+
+//前端用户-路由配置
+Route::group(['namespace' => 'Mobile'], function()
+{
+
+    /*article增删改查*/
+    Route::get('/article', [
+        'as' => 'article', 'uses' => 'ArticleController@showArticle'
+    ]);
+    Route::match(['get','post'],'/article/edit/{id}', [
+        'as' => 'article', 'uses' => 'ArticleController@editArticle'
+    ]);
+    Route::get('/article/del/{id}', [
+        'as' => 'article', 'uses' => 'ArticleController@delArticle'
+    ]);
+
+    //用户端
+    //goods增删改查
+    Route::get('/goods', [
+        'as' => 'goods', 'uses' => 'GoodsController@showGoods'
     ]);
 });
