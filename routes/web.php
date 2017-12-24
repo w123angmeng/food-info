@@ -75,21 +75,20 @@ Route::group(['namespace' => 'Web'], function()
 //前端用户-路由配置
 Route::group(['namespace' => 'Mobile'], function()
 {
-
-    /*article增删改查*/
-    Route::get('/article', [
-        'as' => 'article', 'uses' => 'ArticleController@showArticle'
-    ]);
-    Route::match(['get','post'],'/article/edit/{id}', [
-        'as' => 'article', 'uses' => 'ArticleController@editArticle'
-    ]);
-    Route::get('/article/del/{id}', [
-        'as' => 'article', 'uses' => 'ArticleController@delArticle'
-    ]);
-
     //用户端
-    //goods增删改查
+    //商品增删改查
     Route::get('/goods', [
         'as' => 'goods', 'uses' => 'GoodsController@showGoods'
+    ]);
+    
+    //购物车增删改查
+    Route::get('/cart', [
+        'as' => 'cart', 'uses' => 'CartController@showCart'
+    ]);
+    Route::match(['get','post'],'/cart/add', [
+        'as' => 'cart', 'uses' => 'CartController@addGoodsToCart'
+    ]);
+    Route::get('/cart/del/{id}', [
+        'as' => 'cart', 'uses' => 'CartController@delGoodsFromCart'
     ]);
 });

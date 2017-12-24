@@ -41,9 +41,10 @@ class GoodsController extends Controller
     }
 
     public function showGoods(){
-        $result = DB::select('select * from i_goods_info');
-        return view("mobile/goods",["op" => "show", "result" => $result]);
-
+        $today = date('Y-m-d');
+        $result = DB::select('select * from i_goods_info where date_format(oper_time,"%Y-%m-%d")=?',[$today]);
+        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=?', [$today]);
+        return view("mobile/goods",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
     }
     public function addGoodsToCart($id){
         $results = DB::select('select * from food_info_article where id =?',[$id]);

@@ -58,12 +58,32 @@ class LoginController extends Controller
             }
             $user = $users[0];
 
-            $encrypt_psd = md5($password . $user->salt);
-            if ($user->password === $encrypt_psd){
-                return array(
-                    "status" => 1,
-                    "info" => "登陆成功！"
-                );
+            //$encrypt_psd = md5($password . $user->salt);
+            //if ($user->password === $encrypt_psd){
+            if ($user->password === $password){
+                switch($user->role)
+                {
+                    case "admin":
+                        return array(
+                            "status" => 1,
+                            "info" => "登陆成功！",
+                            "url" => '{{url("/nav")}}'
+                        );
+                        break;
+                    case "user":
+                        return array(
+                            "status" => 1,
+                            "info" => "登陆成功！",
+                            "url" => '{{url("/goods")}}'
+                        );
+                        break;
+                    default:
+                        return array(
+                            "status" => 0,
+                            "info" => "用户角色不能为空！请联系管理员"
+                        );
+                        break;
+                }
             }else{
                 return array(
                     "status" => 0,
