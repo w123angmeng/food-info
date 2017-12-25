@@ -125,7 +125,7 @@
                                 </a>
                             </li>
                             <li class="open" id="shop">
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/order"}}">
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/order/confirm"}}">
                                     <span class="sidebar-mini-hide">我的订单</span>
                                 </a>
                             </li>
@@ -141,7 +141,7 @@
                     <div class="main" style="border: solid 1px grey;padding:0 20px;">
                         <div class="header_text" style="height:40px;line-height:40px;border-bottom:solid 1px grey;">
                             <h3>商品列表
-                                <a href="#" class="btn btn-primary pull-right" role="button">确认提交</a>
+                                <a href="{{"/order/confirm"}}" class="btn btn-primary pull-right" role="button">确认提交</a>
                                 <span class="pull-right" style="color: red;font-size: 16px;">
                                     共
                                     <span id="total_num">{{$total_num}}</span>

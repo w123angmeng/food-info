@@ -63,10 +63,14 @@ class LoginController extends Controller
         if ($user->password === $password){
             //设置cookies
             $user_info = array('uid'=>$user->uid,'username'=>$user->username,'password'=>$user->password,'realname'=>$user->realname,'role'=>$user->role,'ip'=>$_SERVER["REMOTE_ADDR"]);
-            if(!\Cookie::get('user'))
+            if(!session()->has('user') || session('user')["username"] != $user->username)
             {
-                \Cookie::make('user',$user_info,1440);//过期时间1天
+                session(["user"=>$user_info]);
             }
+            //if(!\Cookie::get('user'))
+            //{
+                //\Cookie::make('user',$user_info,1440);//过期时间1天
+            //}
             switch($user->role)
             {
                 case "admin":
@@ -98,5 +102,4 @@ class LoginController extends Controller
         }
 
     }
-
 }

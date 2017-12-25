@@ -41,8 +41,8 @@ class CartController extends Controller
     }
 
     public function showCart(){
-        $result = DB::select('select * from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d") = ?',[date('Y-m-d')]);
-        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=?',[date('Y-m-d')]);
+        $result = DB::select('select * from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
+        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
         return view("mobile/cart",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
     }
 
@@ -62,20 +62,18 @@ class CartController extends Controller
         $result_g = $result_g[0];
         //判断商品是否存在-购物车
         $result = "";
-        var_dump($_COOKIE);
-        var_dump($_COOKIE['user']->uid);
-        $result_c = DB::select('select * from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d")=? and uid = ?', [$id, $today,$_COOKIE['user']->uid]);
+        $result_c = DB::select('select * from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d")=? and uid = ?', [$id, $today,session('user')['uid']]);
         if (empty($result_c)) {
             //添加
-            $data = [$result_g->t_id, $result_g->name, $result_g->image, $result_g->price, $num, $result_g->unit, $result_g->price*$num, date('Y-m-d H:i:s')];
-            $result = DB::insert('insert into i_goods_cart_info (t_id, name, image, price, num,unit,total_price,oper_time) values (?, ?, ?, ?, ?, ?, ?, ?)', $data);
+            $data = [$result_g->t_id, $result_g->name, $result_g->image, $result_g->price, $num, $result_g->unit, $result_g->price*$num, date('Y-m-d H:i:s'),session('user')['uid'],session('user')['username']];
+            $result = DB::insert('insert into i_goods_cart_info (t_id, name, image, price, num,unit,total_price,oper_time,uid,username) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', $data);
         } else {
             $result_c = $result_c[0];
             //编辑
-            $data = [$result_c->num + $num,$result_c->price*($result_c->num + $num), $id, $today];
-            $result = DB::update('update i_goods_cart_info set num = ? ,total_price = ? where t_id = ? and date_format(oper_time,"%Y-%m-%d")=?', $data);
+            $data = [$result_c->num + $num,$result_c->price*($result_c->num + $num), $id, $today,session('user')['uid']];
+            $result = DB::update('update i_goods_cart_info set num = ? ,total_price = ? where t_id = ? and date_format(oper_time,"%Y-%m-%d")=? and uid = ?', $data);
         }
-        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=?', [$today]);
+        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?', [$today,session('user')['uid']]);
         if ($result) {
             return array(
                 "status" => 1,
@@ -93,14 +91,14 @@ class CartController extends Controller
     }
 
     public function delGoodsFromCart($id){
-        $results = DB::select('select * from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d") = ?',[$id,date('Y-m-d')]);
+        $results = DB::select('select * from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[$id,date('Y-m-d'),session('user')['uid']]);
         if(empty($results)){
             return array(
                 "status" => 0,
                 "info" => "该商品不存在！"
             );
         }
-        $result = DB::delete('delete from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d") = ?',[$id,date('Y-m-d')]);
+        $result = DB::delete('delete from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[$id,date('Y-m-d'),session('user')['uid']]);
         if($result){
             return array(
                 "status" => 1,

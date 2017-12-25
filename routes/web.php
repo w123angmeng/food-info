@@ -91,4 +91,15 @@ Route::group(['namespace' => 'Mobile'], function()
     Route::get('/cart/del/{id}', [
         'as' => 'cart', 'uses' => 'CartController@delGoodsFromCart'
     ]);
+
+    //订单增删改查
+    Route::get('/order/confirm', [
+        'as' => 'order', 'uses' => 'OrderController@showConfirmOrder'
+    ]);
+    Route::get('/order/create', [
+        'as' => 'order', 'uses' => 'OrderController@createOrder'
+    ]);
+    Route::get('/order/list', [
+        'as' => 'order', 'uses' => 'OrderController@showOrderList'
+    ]);
 });

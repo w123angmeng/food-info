@@ -140,57 +140,42 @@
                 <div class="col-sm-10" style="height:700px;padding-right:0;">
                     <div class="main" style="border: solid 1px grey;padding:0 20px;">
                         <div class="header_text" style="height:40px;line-height:40px;border-bottom:solid 1px grey;">
-                            <h3>购物车
-                                <a href="{{"/order/confirm"}}" class="btn btn-primary pull-right" role="button">确认提交</a>
-                                <span class="pull-right" style="color: red;font-size: 16px;">
-                                    共
-                                    <span id="total_num">{{$total_num}}</span>
-                                    件
-                                    &nbsp;&nbsp;
-                                    共
-                                    <span id="total_price">{{$total_price}}</span>
-                                    元
-                                </span>
-                            </h3>
+                            <h3>订单确认<a class="btn btn-primary pull-right" type="button" href="{{"/order/create"}}">提交订单</a></h3>
                         </div>
-                        <div class="main_content" style="height:auto;padding-top: 15px;">
+                        <div class="main_content" style="height:650px;padding-top: 15px;">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">订单确认</div>
+                                <div class="panel-body">
+                                    <ul class="media-list">
+                                        @foreach ($result as $r)
+                                            <li class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object" data-src="holder.js/80%x80" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height:100px;width:100px;">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">{{$r->name}}</h4>
+                                                    <p>单价：{{$r->price}}&nbsp;&nbsp;数量：{{$r->num}}{{$r->unit}}</p>
+                                                </div>
+                                            </li>
+                                        @endforeach
+                                        <li class="media">
+                                            <div class="media-left">
 
-                            <div class="row">
-                                @foreach ($result as $r)
-                                    <div class="col-sm-6 col-md-3" style="padding-left:0;">
-                                        <div class="thumbnail" style="height:auto;">
-                                            <input name="id" type="hidden" value="{{$r->t_id}}">
-                                            <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                            <div class="caption">
-                                                <h5>{{$r->name}}</h5>
-                                                <p><span>价格：{{$r->price}}</span><span>  数量：{{$r->num}}</span></p>
-                                                <p><a href="#" class="btn btn-primary btn_Add" role="button">删除</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
                                             </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+                                            <div class="media-body">
+                                                <h4 class="media-heading">下单人：{{session('user')["username"]}}</h4>
+                                                <h4 class="media-heading">下单时间：{{date("Y-m-d H:i:s")}}</h4>
+                                                <h4 class="media-heading">总数量：{{$total_num}}件&nbsp;&nbsp; 总价：{{$total_price}}元</h4>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <script type="application/javascript">
-                        $(".btn_Add").click(function(e){
-                            var id = $(e.target).closest(".thumbnail").find("input[name='id']").val();
-                            $.ajax({
-                                type:"GET",
-                                url:"{{ url('cart/del') }}"+"/"+id,
-                                success:function(data){
-                                    if(data.status == 1){
-                                        alert(data.info);
-                                        location.href = "{{url("/cart")}}";
-                                        //$("#total_num").text(data.total_num);
-                                        //$("#total_price").text(data.total_price);
-                                    }else{
-                                        alert(data.info);
-                                    }
-
-                                }
-                            });
-                        });
                         $("#btn_submit").click(function(){
                             var title = $("input[name='title']").val();
                             var thumb = $("input[name='thumb']").val();
@@ -228,6 +213,31 @@
                             });
                         });
                     </script>
+                </div>
+            </div>
+        </div>
+        <div class="flex-center position-ref full-height">
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @if (Auth::check())
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
+                </div>
+            @endif
+            <div class="content">
+                <div class="title m-b-md">
+                    Laravel
+                </div>
+
+                <div class="links">
+                    <a href="https://laravel.com/docs">Documentation</a>
+                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="https://laravel-news.com">News</a>
+                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
         </div>
