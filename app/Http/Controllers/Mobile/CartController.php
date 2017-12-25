@@ -62,7 +62,9 @@ class CartController extends Controller
         $result_g = $result_g[0];
         //判断商品是否存在-购物车
         $result = "";
-        $result_c = DB::select('select * from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d")=?', [$id, $today]);
+        var_dump($_COOKIE);
+        var_dump($_COOKIE['user']->uid);
+        $result_c = DB::select('select * from i_goods_cart_info where t_id =? and date_format(oper_time,"%Y-%m-%d")=? and uid = ?', [$id, $today,$_COOKIE['user']->uid]);
         if (empty($result_c)) {
             //添加
             $data = [$result_g->t_id, $result_g->name, $result_g->image, $result_g->price, $num, $result_g->unit, $result_g->price*$num, date('Y-m-d H:i:s')];
