@@ -72,6 +72,7 @@ CREATE TABLE `food_info_users` (
   `username` varchar(30) NOT NULL,
   `password` varchar(200) NOT NULL,
   `realname` varchar(30) DEFAULT '',
+  `phone` varchar(20) DEFAULT '',
   `email` varchar(50) NOT NULL DEFAULT '',
   `role` varchar(30) NOT NULL DEFAULT 'admin',
   `salt` varchar(10) NOT NULL,

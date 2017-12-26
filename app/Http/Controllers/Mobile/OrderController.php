@@ -50,12 +50,11 @@ class OrderController extends Controller
     public function createOrder(){
         $result_c = DB::select('select * from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
         $result_sum = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
+        $result_info = array();
         //判断商品是否存在-商品表
         if (empty($result_c)) {
-            return array(
-                "status" => 0,
-                "info" => "提交商品不能为空！"
-            );
+            $result_info["status"] = 0;
+            $result_info["info"] = '提交商品不能为空！';
         }
         $result_sum = $result_sum[0];
         //订单号12位
@@ -65,10 +64,8 @@ class OrderController extends Controller
         $result_r = DB::insert('insert into i_order_info (order_no, total_price, total_num, oper_time, uid, username, is_valid, cancle_flag) values (?, ?, ?, ?, ?, ?, ?, ?)', $data);
         if(empty($result_r))
         {
-            return array(
-                "status" => 0,
-                "info" => "抱歉，生成订单失败！"
-            );
+            $result_info["status"] = 0;
+            $result_info["info"] = '抱歉，生成订单失败！';
         }
         $result_r = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
         $result_r = $result_r[0];
@@ -91,20 +88,20 @@ class OrderController extends Controller
         }
         if($flag)
         {
-            return array(
-                "status" => 1,
-                "info" => "生成订单成功！"
-            );
+            //生成订单后清空购物车
+            DB::select('DELETE from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
+            $result_info["status"] = 1;
+            $result_info["info"] = '生成订单成功！';
         }
-        return array(
-            "status" => 0,
-            "info" => "订单生成失败！"
-        );
+
+        $result_info["status"] = 0;
+        $result_info["info"] = '订单生成失败！';
+        return view("mobile/commonTip",["type" => "order", "result" => $result_info]);
     }
     public function showOrderList(){
         $result = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
         $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
-        return view("mobile/cart",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
+        return view("mobile/order/",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
     }
 
     public function showOrderDetail(){
