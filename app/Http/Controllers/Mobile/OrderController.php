@@ -43,7 +43,7 @@ class OrderController extends Controller
     public function showConfirmOrder(){
         $result = DB::select('select * from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
         $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
-        return view("mobile/confirmOrder",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
+        return view("mobile/orderConfirm",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
     }
 
     //生成订单
@@ -56,11 +56,11 @@ class OrderController extends Controller
             $result_info["status"] = 0;
             $result_info["info"] = '提交商品不能为空！';
         }
-        $result_sum = $result_sum[0];
+        //$result_sum = $result_sum[0];
         //订单号12位
         $order_no = "DF".substr(date('Ymd'),-6).rand('1000','9999');
         //订单表中插入数据
-        $data = [$order_no,$result_sum->total_price,$result_sum->total_num,date('Y-m-d H:i:s'),session('user')['uid'],session('user')['username'],1,0];
+        $data = [$order_no,$result_sum[0]->total_price,$result_sum[0]->total_num,date('Y-m-d H:i:s'),session('user')['uid'],session('user')['username'],1,0];
         $result_r = DB::insert('insert into i_order_info (order_no, total_price, total_num, oper_time, uid, username, is_valid, cancle_flag) values (?, ?, ?, ?, ?, ?, ?, ?)', $data);
         if(empty($result_r))
         {
@@ -93,15 +93,25 @@ class OrderController extends Controller
             $result_info["status"] = 1;
             $result_info["info"] = '生成订单成功！';
         }
-
-        $result_info["status"] = 0;
-        $result_info["info"] = '订单生成失败！';
+        else
+        {
+            $result_info["status"] = 0;
+            $result_info["info"] = '订单生成失败！';
+        }
         return view("mobile/commonTip",["type" => "order", "result" => $result_info]);
     }
     public function showOrderList(){
-        $result = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
-        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
-        return view("mobile/order/",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
+        $result_goods = array();
+        $result_r = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
+        if(!empty($result_r))
+        {
+            foreach ($result_r as $r)
+            {
+                $result_g = DB::select('select * from i_order_goods_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ? and order_id = ?',[date('Y-m-d'),session('user')['uid'],$r->id]);
+                $result_goods[$r->id] = $result_g;
+            }
+        }
+        return view("mobile/orderList",["op" => "show", "result" => $result_r,"result_g"=>$result_goods]);
     }
 
     public function showOrderDetail(){
@@ -110,10 +120,28 @@ class OrderController extends Controller
         return view("mobile/cart",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
     }
 
-    public function delOrder(){
-        $result = DB::select('select * from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
-        $results_num = DB::select('select sum(num) as total_num,sum(total_price) as total_price from i_goods_cart_info where date_format(oper_time,"%Y-%m-%d")=? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
-        return view("mobile/cart",["op" => "show", "result" => $result,"total_num"=>$results_num[0]->total_num,"total_price"=>$results_num[0]->total_price]);
+    public function delOrder($id){
+        $result = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ? and id = ?',[date('Y-m-d'),session('user')['uid'],$id]);
+        if(empty($result))
+        {
+            array(
+                'status' => 0,
+                'info' => '删除数据不存在！'
+            );
+        }
+        $result_r = DB::delete('delete from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ? and id = ?',[date('Y-m-d'),session('user')['uid'],$id]);
+        $result_g = DB::delete('delete from i_order_goods_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ? and order_id = ?',[date('Y-m-d'),session('user')['uid'],$id]);
+        if($result_r && $result_g)
+        {
+            array(
+                'status' => 1,
+                'info' => '删除订单成功！'
+            );
+        }
+        array(
+            'status' => 0,
+            'info' => '删除订单失败！'
+        );
     }
 
 

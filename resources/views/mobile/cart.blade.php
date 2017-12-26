@@ -125,7 +125,7 @@
                                 </a>
                             </li>
                             <li class="open" id="shop">
-                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/order/confirm"}}">
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/order/list"}}">
                                     <span class="sidebar-mini-hide">我的订单</span>
                                 </a>
                             </li>

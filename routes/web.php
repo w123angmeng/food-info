@@ -102,4 +102,7 @@ Route::group(['namespace' => 'Mobile'], function()
     Route::get('/order/list', [
         'as' => 'order', 'uses' => 'OrderController@showOrderList'
     ]);
+    Route::get('/order/del/{id}', [
+        'as' => 'order', 'uses' => 'OrderController@delOrder'
+    ]);
 });
