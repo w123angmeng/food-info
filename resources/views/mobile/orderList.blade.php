@@ -140,7 +140,7 @@
                 <div class="col-sm-10" style="height:700px;padding-right:0;">
                     <div class="main" style="border: solid 1px grey;padding:0 20px;">
                         <div class="header_text" style="height:40px;line-height:40px;border-bottom:solid 1px grey;">
-                            <h3>我的订单<a class="btn btn-primary pull-right" type="button" href="{{"/order/create"}}">提交订单</a></h3>
+                            <h3>我的订单</h3>
                         </div>
                         <div class="main_content" style="height:650px;padding-top: 15px;">
                             <div class="panel panel-primary">
