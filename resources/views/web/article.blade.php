@@ -134,6 +134,21 @@
                                     <span class="sidebar-mini-hide">文章管理</span>
                                 </a>
                             </li>
+                            <li class="open" id="shop">
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/web/user"}}">
+                                    <span class="sidebar-mini-hide">用户管理</span>
+                                </a>
+                            </li>
+                            <li class="open" id="shop">
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/web/goods"}}">
+                                    <span class="sidebar-mini-hide">商品管理</span>
+                                </a>
+                            </li>
+                            <li class="open" id="shop">
+                                <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/web/order"}}">
+                                    <span class="sidebar-mini-hide">订单管理</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>

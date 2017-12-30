@@ -142,7 +142,7 @@
                         <div class="header_text" style="height:40px;line-height:40px;border-bottom:solid 1px grey;">
                             <h3>购物车
                                 <a href="{{"/order/confirm"}}" class="btn btn-primary pull-right" role="button">确认提交</a>
-                                <span class="pull-right" style="color: red;font-size: 16px;">
+                                <span id="total-price" class="pull-right" style="@if($total_num <= 0)display:none;@endif color: red;font-size: 16px;">
                                     共
                                     <span id="total_num">{{$total_num}}</span>
                                     件

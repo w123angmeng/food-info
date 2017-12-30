@@ -67,7 +67,7 @@ class OrderController extends Controller
             $result_info["status"] = 0;
             $result_info["info"] = '抱歉，生成订单失败！';
         }
-        $result_r = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ?',[date('Y-m-d'),session('user')['uid']]);
+        $result_r = DB::select('select * from i_order_info where date_format(oper_time,"%Y-%m-%d") = ? and uid = ? order by oper_time DESC',[date('Y-m-d'),session('user')['uid']]);
         $result_r = $result_r[0];
         $flag = true;
         //订单商品表中插入数据

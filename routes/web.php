@@ -65,10 +65,34 @@ Route::group(['namespace' => 'Web'], function()
         'as' => 'article', 'uses' => 'ArticleController@delArticle'
     ]);
 
-    //用户端
-    //goods增删改查
-    Route::get('/mobile/goods', [
-        'as' => 'article', 'uses' => 'ArticleController@showArticle'
+    /*用户增删改查*/
+    Route::get('/web/user', [
+        'as' => '/web/user', 'uses' => 'UserController@showUser'
+    ]);
+    Route::match(['get','post'],'/web/user/edit/{id}', [
+        'as' => '/web/user', 'uses' => 'UserController@editUser'
+    ]);
+    Route::get('/web/user/del/{id}', [
+        'as' => '/web/user', 'uses' => 'UserController@delUser'
+    ]);
+
+    /*订单管理增删改查*/
+    Route::get('/web/order', [
+        'as' => '/web/order', 'uses' => 'OrderController@showOrderList'
+    ]);
+    Route::get('/web/order/{id}', [
+        'as' => '/web/order', 'uses' => 'OrderController@delOrder'
+    ]);
+
+    /*商品管理增删改查*/
+    Route::get('web/goods', [
+        'as' => 'web/goods', 'uses' => 'GoodsController@showGoodsList'
+    ]);
+    Route::match(['get','post'],'/web/goods/edit/{id}', [
+        'as' => '/web/order', 'uses' => 'GoodsController@editGoods'
+    ]);
+    Route::get('/web/goods/{id}', [
+        'as' => '/web/order', 'uses' => 'GoodsController@delGoods'
     ]);
 });
 
