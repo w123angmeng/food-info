@@ -503,7 +503,7 @@
                     success:function(data){
                         if(data.status == 1){
                             $("#tip_login").css("color","green").text("登陆成功！");
-                            @if(session('user')['username'] == "admin")
+                            @if(session('user')['role'] == "admin")
                                 location.href = "{{url("/nav")}}";
                             @else
                                 location.href = "{{url("/goods")}}";
