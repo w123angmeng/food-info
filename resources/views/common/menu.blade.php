@@ -34,6 +34,11 @@
                 <span class="sidebar-mini-hide">订单管理</span>
             </a>
         </li>
+        <li class="open" id="shop">
+            <a class="nav-submenu" data-toggle="nav-submenu" href="{{"/web/order/statistic"}}">
+                <span class="sidebar-mini-hide">订单统计</span>
+            </a>
+        </li>
     </ul>
     @else
         <ul class="nav-main">

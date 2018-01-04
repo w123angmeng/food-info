@@ -84,6 +84,11 @@ Route::group(['namespace' => 'Web'], function()
         'as' => '/web/order', 'uses' => 'OrderController@delOrder'
     ]);
 
+    /*订单统计增删改查*/
+    Route::get('/web/order/statistic', [
+        'as' => '/web/order/statistic', 'uses' => 'OrderController@showOrderStatistic'
+    ]);
+
     /*商品管理增删改查*/
     Route::get('web/goods', [
         'as' => 'web/goods', 'uses' => 'GoodsController@showGoodsList'

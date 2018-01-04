@@ -84,4 +84,11 @@ class OrderController extends Controller
         );
     }
 
+    //订单统计
+    public function showOrderStatistic(){
+        var_dump($result_g);
+        $result_g = DB::select('select goods_t_id,goods_name,count(goods_num) as total_num,goods_unit,goods_price from i_order_goods_info where date_format(oper_time,"%Y-%m-%d") = ? group by goods_t_id',[date('Y-m-d')]);
+        var_dump($result_g);
+        return view("web/orderStatistic",["result" => $result_g]);
+    }
 }
