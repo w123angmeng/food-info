@@ -5,9 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-
-        <title>Laravel123</title>
+        <title>HIS官网</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -25,443 +23,454 @@
             html, body {
                 background-color: #fff;
                 color: #636b6f;
-                font-family: 'Raleway', sans-serif;
+                font-family:"微软雅黑";
+                font-size:14px;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
             }
-
-            .full-height {
-                height: 100vh;
+            div p{
+                margin:0 0;
             }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
+            body>div{
+                width: 1200px;
+                margin:0 0;
             }
-
-            .position-ref {
-                position: relative;
+            div.logo{
+                height:90px;
+                line-height: 90px;
             }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+            div.nav{
+                width:100%;
+                border:1px solid #636b6f;
             }
-
-            .content {
+            div.main>div.square-part{
+                margin-top: 25px;
+                height:200px;
+            }
+            div.main>div.square-part>div.square-item{
+                border:1px solid #636b6f;
+            }
+            div.main>div.square-part:first-child{
+                /*background-color: pink;*/
+            }
+            div.main>div.square-part:last-child{
+                /*background-color: pink;*/
+            }
+            div.main>div.square-part>div.square-item>p.item-icon{
+                height:140px;
+                line-height: 140px;
                 text-align: center;
             }
-
-            .title {
-                font-size: 84px;
+            div.main>div.square-part>div.square-item>p.item-icon>img{
+                margin:auto auto;
+                vertical-align: center;
             }
 
-            /*.links > a {*/
-                /*color: #636b6f;*/
-                /*padding: 0 25px;*/
-                /*font-size: 12px;*/
-                /*font-weight: 600;*/
-                /*letter-spacing: .1rem;*/
-                /*text-decoration: none;*/
-                /*text-transform: uppercase;*/
-            /*}*/
-
-            .m-b-md {
-                margin-bottom: 30px;
+            div.main>div.square-part>div.square-item>p.item-name{
+                height:60px;
+                line-height: 60px;
+                text-align: center;
+                font-size:16px;
             }
+
+
+            div.main>div.expert-part{
+                margin-top: 25px;
+            }
+            div.main>div.expert-part>div.expert-item{
+                padding:10px;
+            }
+            div.main>div.expert-part>div.expert-item>div.expert-img{
+                height:180px;
+                width:100%;
+                text-align: center;
+                border-left:1px solid darkgray;
+                border-right: 1px solid darkgray;
+                border-top: 1px solid darkgray;
+            }
+            div.main>div.expert-part>div.expert-item>div.expert-info{
+                height:60px;
+                line-height: 30px;
+                text-align: center;
+                border-left:1px solid darkgray;
+                border-right: 1px solid darkgray;
+                border-bottom: 1px solid darkgray;
+            }
+            div.main>div.expert-part>div.expert-item>div.expert-info>p.expert-name{
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+
+            div.main>div.goods-part{
+                margin-top: 25px;
+            }
+            div.main>div.goods-part>div.goods-item{
+                padding:10px;
+            }
+            div.main>div.goods-part>div.goods-item>div.goods-img{
+                height:180px;
+                width:100%;
+                text-align: center;
+                border-left:1px solid darkgray;
+                border-right: 1px solid darkgray;
+                border-top: 1px solid darkgray;
+            }
+            div.main>div.goods-part>div.goods-item>div.goods-info{
+                height:60px;
+                line-height: 30px;
+                padding-left: 30px;
+                border-left:1px solid darkgray;
+                border-right: 1px solid darkgray;
+                border-bottom: 1px solid darkgray;
+            }
+            div.main>div.goods-part>div.goods-item>div.goods-info{
+                font-size: 18px;
+                font-weight: bold;
+            }
+            div.main>div.goods-part>div.goods-item>div.goods-info>p>span.goods-price{
+                font-size: 20px;
+                font-weight: bold;
+                color: darkorange;
+            }
+
+             div.news-info{
+                 padding:10px;
+             }
+            div.news-info>div.news-img{
+                height:120px;
+                border-left:1px solid darkgray;
+                border-right: 1px solid darkgray;
+                border-top: 1px solid darkgray;
+            }
+            div.news-info>div.news-list{
+                line-height: 30px;
+                padding-left:30px;
+                border-left:1px solid darkgray;
+                border-right: 1px solid darkgray;
+                border-bottom: 1px solid darkgray;
+            }
+
+            div.main>div.head-text{
+                height:50px;
+                line-height: 50px;
+                margin-top:25px;
+                padding-left:10px;
+            }
+            div.head-text>div.little-rectangle{
+                width:12px;
+                height:50px;
+                background-color: #007d5b;
+                display: inline-block;
+            }
+            div.head-text>div.head-info{
+                line-height: 25px;
+                margin-left:5px;
+                display: inline-block;
+            }
+            div.footer{
+                width:100%;
+                background-color: black;
+            }
+            div.footer>div.footer-content {
+                width: 1200px;
+                margin:0 auto;
+
+            }
+            /*
+            li.active{
+                background-color: #016549;
+                color: white;
+                font-size: 16px;
+            }
+            ul{
+                background-color: #017e5c;color:white;
+            }
+            */
         </style>
     </head>
     <body>
-        <div class="container" style="border: solid 1px grey">
-            <ul class="nav nav-pills" style="">
-                <li role="presentation" class="active"><a href="#">首页</a></li>
-                <li role="presentation"><a href="#">食品资讯</a></li>
-                <li role="presentation"><a href="#">食疗养生</a></li>
-                <li role="presentation"><a href="#">相关产品</a></li>
-                <li role="presentation"><a href="#">关于我们</a></li>
-                <li class="pull-right" role="presentation"><a href="#">注册</a></li>
-                <li class="pull-right" role="presentation" id="login"><a href="#">登陆</a></li>
+        <div class="container logo">
+            <div class="row">
+                <div class="col-md-8 logo-left pull-left">
+                    <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/logo.png" width="50px" height="50px" style="display: inline-block">
+                    <span>青岛圣林源老年病医院</span>
+                </div>
+                <div class="col-md-4 logo-right pull-right">
+                    <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/phone_white.png" width="30px" height="30px" style="display: inline-block">
+                    <span>联系电话：0936-6732529</span>
+                </div>
+            </div>
+        </div>
+        <div class="container menu">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">主页</a></li>
+                <li role="presentation"><a href="#">专家团队</a></li>
+                <li role="presentation"><a href="#">特色科室</a></li>
             </ul>
         </div>
-        <div id="login_container" class="container" style="background-color:#ffffff;position:absolute;z-index:3;display:none;margin-top:200px;margin-left:40%;width:450px;height:300px;text-align: center;border:1px solid grey;">
-            <h2>管理员登陆</h2>
-            <i id="close_login_container" class="fa fa-window-close" style="position:absolute;right:15px;top:15px;font-size:16px;"></i>
-            <div class="row" style="margin-top: 30px;">
-                <div class="col-sm-offset-1 col-sm-4">
-                    <img alt="120x120" class="media-object" data-src="holder.js/120x120" src="/images/photo.jpg" style="width: 120px; height: 120px;">
+        <div class="container nav">
+            <div class="swiper-container" style="height:300px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/nav.png" width="100%">
+                        <!--<div class="inner">
+                            <div id="mainTheme"><h1>Swiper</h1><span>3</span></div>
+                            <p data-swiper-parallax="-1500" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">开源、免费、强大的移动端触摸滑动插件</p>
+                            <div class="subbtn" data-swiper-parallax="-3000" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                <a class="button" href="/demo/index.html">查看Swiper演示</a>  <a class="button" href="/api/index.html">查看API 文档</a>  <a class="button" href="http://bbs.swiper.com.cn" target="_blank">交流、分享Swiper</a>  <a class="button" href="http://swiper2.swiper.com.cn" target="_blank">回顾Swiper2</a></div>
+                            <div class="mainbtn" data-swiper-parallax="-4500" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                                <a href="/usage/index.html">开始使用 Swiper</a></div>
+                        </div>-->
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/nav.png" width="100%">
+                    </div>
+                    <div class="swiper-slide">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/nav.png" width="100%">
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                        <div class="form-group">
-                            <input type="text" name="username" class="form-control" placeholder="用户名" aria-describedby="sizing-addon1">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password" class="form-control" placeholder="密码" aria-describedby="sizing-addon1">
-                            <p id="tip_login" class="help-block" style="color:red;"></p>
-                        </div>
-                        <div class="form-group">
-                            <button id="btn_login" type="button" class="btn btn-primary" style="width:100%;">登陆</button>
-                        </div>
-                </div>
+                <!-- 如果需要分页器 -->
+            {{--<div class="swiper-pagination"></div>--}}
+
+            <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <!-- 如果需要滚动条 -->
+                <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <div id="main_container" class="container" style="position:relative;border: solid 1px grey">
-            <div id="cover_main_container" style="display:none;z-index:2;position:absolute;left:0;right:0;width:100%;height:100%;background-color:rgba(105, 105, 105, 0.6);"></div>
-            <div class="row" style="height:800px;padding-top: 15px;">
-                <div class="col-md-8">
-                    <div class="content" style="height:300px;border: solid 1px grey">
-                        <div class="swiper-container" style="height:300px;">
-                            <div class="swiper-wrapper">
-                                @foreach ($navs as $nav)
-                                <div class="swiper-slide">{{$nav->advname}}</div>
-                                @endforeach
-                            </div>
-                            <!-- 如果需要分页器 -->
-                            {{--<div class="swiper-pagination"></div>--}}
-
-                            <!-- 如果需要导航按钮 -->
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-
-                            <!-- 如果需要滚动条 -->
-                            <div class="swiper-scrollbar"></div>
-                        </div>
+        <div class="container main">
+            <div class="row square-part">
+                <div class="col-md-2"></div>
+                <div class="col-md-2 square-item" style="background-color: #5f9889;">
+                    <p class="item-icon">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/search_icon.png" width="120px" height="120px">
+                    </p>
+                    <p class="item-name">报告查询</p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2 square-item" style="background-color: #d59057;">
+                    <p class="item-icon">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/reg_icon.png" width="120px" height="120px">
+                    </p>
+                    <p class="item-name">挂号指南</p>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2 square-item" style="background-color: #a4adcc;">
+                    <p class="item-icon">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/server_icon.png" width="120px" height="120px">
+                    </p>
+                    <p class="item-name">服务指南</p>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row head-text">
+                <div class="little-rectangle">
+                </div>
+                <div class="head-info">
+                    <p class="head-name">专家团队</p>
+                    <p class="head-sub-name">Expert Team</p>
+                </div>
+            </div>
+            <div class="row expert-part">
+                <div class="col-md-4  expert-item">
+                    <div class="expert-img">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/expert_min.png" width="100%" height="100%">
                     </div>
-                    <div class="row" style="height:500px;padding-top: 15px;">
-                        <div class="col-md-6" style="padding-right: 0;">
-                            <div class="panel panel-primary" style="height:485px;border: solid 1px grey">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">国内资讯</h3>
-                                </div>
-                                <div class="panel-body">
-                                    @foreach($articles as $item)
-                                        @if($item->category_name == '国内资讯')
-                                            <div class="media" style="">
-                                                <div class="media-left">
-                                                    <a href="#">
-                                                        <img alt="64x64" class="media-object" data-src="holder.js/64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNWEzZmI5MThkNiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1YTNmYjkxOGQ2Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNCIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="width: 64px; height: 64px;">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">{{$item->article_title}}</h4>
-                                                    {{$item->article_content}}
-                                                </div>
-                                            </div>
-                                        @elseif($item->category_name == '国内资讯')
-                                            <div class="list-group" style="padding-top: 15px;">
-                                                <a href="#" class="list-group-item">
-                                                    <h4 class="list-group-item-heading">{{$item->article_title}}</h4>
-                                                    <p class="list-group-item-text">{{$item->article_content}}</p>
-                                                </a>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="panel panel-primary" style="height:485px;border: solid 1px grey">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">国外资讯</h3>
-                                </div>
-                                <div class="panel-body">
-                                    @foreach($articles as $item)
-                                        @if($item->category_name == '国外资讯')
-                                            <div class="media" style="">
-                                                <div class="media-left">
-                                                    <a href="#">
-                                                        <img alt="64x64" class="media-object" data-src="holder.js/64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNWEzZmI5MThkNiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1YTNmYjkxOGQ2Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNCIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="width: 64px; height: 64px;">
-                                                    </a>
-                                                </div>
-                                                <div class="media-body">
-                                                    <h4 class="media-heading">{{$item->article_title}}</h4>
-                                                    {{$item->article_content}}
-                                                </div>
-                                            </div>
-                                        @elseif($item->category_name == '国外资讯')
-                                            <div class="list-group" style="padding-top: 15px;">
-                                                <a href="#" class="list-group-item">
-                                                    <h4 class="list-group-item-heading">{{$item->article_title}}</h4>
-                                                    <p class="list-group-item-text">{{$item->article_content}}</p>
-                                                </a>
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
+                    <div class="expert-info">
+                        <p class="expert-name">Peter &nbsp;&nbsp;<span>主任医生</span></p>
+                        <p>心脑血管专家</p>
                     </div>
                 </div>
-                <div class="col-md-4" style="height:800px;padding-left:0;">
-                    <div class="panel panel-primary" style="height:800px;border: solid 1px grey">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">热点资讯</h3>
-                        </div>
-                        <div class="panel-body">
-                            @foreach($articles as $item)
-                                @if($item->category_name == '热点资讯')
-                                    <div class="media" style="">
-                                        <div class="media-left">
-                                            <a href="#">
-                                                <img alt="64x64" class="media-object" data-src="holder.js/64x64" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+PCEtLQpTb3VyY2UgVVJMOiBob2xkZXIuanMvNjR4NjQKQ3JlYXRlZCB3aXRoIEhvbGRlci5qcyAyLjYuMC4KTGVhcm4gbW9yZSBhdCBodHRwOi8vaG9sZGVyanMuY29tCihjKSAyMDEyLTIwMTUgSXZhbiBNYWxvcGluc2t5IC0gaHR0cDovL2ltc2t5LmNvCi0tPjxkZWZzPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+PCFbQ0RBVEFbI2hvbGRlcl8xNWEzZmI5MThkNiB0ZXh0IHsgZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQgfSBdXT48L3N0eWxlPjwvZGVmcz48ZyBpZD0iaG9sZGVyXzE1YTNmYjkxOGQ2Ij48cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxNCIgeT0iMzYuNSI+NjR4NjQ8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" data-holder-rendered="true" style="width: 64px; height: 64px;">
-                                            </a>
-                                        </div>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">{{$item->article_title}}</h4>
-                                            {{$item->article_content}}
-                                        </div>
-                                    </div>
-                                @elseif($item->category_name == '热点资讯')
-                                    <div class="list-group" style="padding-top: 15px;">
-                                        <a href="#" class="list-group-item">
-                                            <h4 class="list-group-item-heading">{{$item->article_title}}</h4>
-                                            <p class="list-group-item-text">{{$item->article_content}}</p>
-                                        </a>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
+                <div class="col-md-4  expert-item">
+                    <div class="expert-img">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/expert_min.png" width="100%" height="100%">
+                    </div>
+                    <div class="expert-info">
+                        <p class="expert-name">Peter &nbsp;&nbsp;<span>主任医生</span></p>
+                        <p>心脑血管专家</p>
+                    </div>
+                </div>
+                <div class="col-md-4  expert-item">
+                    <div class="expert-img">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/expert_min.png" width="100%" height="100%">
+                    </div>
+                    <div class="expert-info">
+                        <p class="expert-name">Peter &nbsp;&nbsp;<span>主任医生</span></p>
+                        <p>心脑血管专家</p>
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top:30px;">
-                <div class="col-md-12">
-                    <div class="panel panel-primary" style="border: solid 1px grey">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">食品专业知识</h3>
+            <div class="row head-text">
+                <div class="little-rectangle">
+                </div>
+                <div class="head-info">
+                    <p class="head-name">特色科室</p>
+                    <p class="head-sub-name">Expert Team</p>
+                </div>
+            </div>
+            <div class="row head-text">
+                <div class="little-rectangle">
+                </div>
+                <div class="head-info">
+                    <p class="head-name">健康体检</p>
+                    <p class="head-sub-name">Expert Team</p>
+                </div>
+            </div>
+            <div class="row goods-part">
+                <div class="col-md-4  goods-item">
+                    <div class="goods-img">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/package_min.png" width="100%" height="100%">
+                    </div>
+                    <div class="goods-info">
+                        <p class="goods-name">体检套餐</p>
+                        <p>青岛圣林源医院 &nbsp;&nbsp;<span class="goods-price">￥2800</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4  goods-item">
+                    <div class="goods-img">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/package_min.png" width="100%" height="100%">
+                    </div>
+                    <div class="goods-info">
+                        <p class="goods-name">体检套餐</p>
+                        <p>青岛圣林源医院 &nbsp;&nbsp;<span class="goods-price">￥2800</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4  goods-item">
+                    <div class="goods-img">
+                        <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/package_min.png" width="100%" height="100%">
+                    </div>
+                    <div class="goods-info">
+                        <p class="goods-name">体检套餐</p>
+                        <p>青岛圣林源医院 &nbsp;&nbsp;<span class="goods-price">￥2800</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row news-part">
+                <div class="col-md-6 left-news">
+                    <div class="row head-text">
+                        <div class="little-rectangle">
                         </div>
-                        <div class="panel-body" style="height:525px;">
-                            <div class="row">
+                        <div class="head-info">
+                            <p class="head-name">医院动态</p>
+                            <p class="head-sub-name">Expert Team</p>
+                        </div>
+                    </div>
+
+                    <div class="news-info">
+                        <div class="row news-img">
+                            <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/notice_min.png" width="100%" height="100%">
+                        </div>
+                        <div class="row news-list">
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
                                 <div class="col-md-4">
-                                    <div class="thumbnail" style="height:495px;">
-                                        <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                        </div>
-                                    </div>
+                                    <span class="news-date">2017-3-13</span>
                                 </div>
-                                <div class="col-md-8" style="height:495px;">
-                                    <div class="row">
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row" style="padding-top: 15px;">
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3" style="height:240px;padding-left:0;">
-                                            <a href="#" class="thumbnail">
-                                                <img alt="100%x140" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMxOSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTc2MzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5NzYzNSI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSI5Ny4yIj4zMTl4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+" data-holder-rendered="true" style="height: 140px; width: 100%; display: block;">
-                                                <div style="height:80px;">
-                                                    <h4>Thumbnail label</h4>
-                                                    <p>Cras justo odio,Cras justo odio,</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
+                                </div>
+                            </div>
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
+                                </div>
+                            </div>
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-primary" style="border: solid 1px grey">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">食疗养生</h3>
+                <div class="col-md-6 left-news">
+                    <div class="row head-text">
+                        <div class="little-rectangle">
                         </div>
-                        <div class="panel-body" style="height:300px;">
-                            <div class="row">
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:280px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:100px;">
-                                            <h4>冬季吃什么最补</h4>
-                                            <p>Cras justo odio, dapibus ac facilisis in,冬季吃什么最补</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:280px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:100px;">
-                                            <h4>冬季吃什么最补</h4>
-                                            <p>Cras justo odio, dapibus ac facilisis in,冬季吃什么最补</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:280px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:100px;">
-                                            <h4>冬季吃什么最补</h4>
-                                            <p>Cras justo odio, dapibus ac facilisis in,冬季吃什么最补</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:280px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:100px;">
-                                            <h4>冬季吃什么最补</h4>
-                                            <p>Cras justo odio, dapibus ac facilisis in,冬季吃什么最补</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="head-info">
+                            <p class="head-name">医院公告</p>
+                            <p class="head-sub-name">Expert Team</p>
+                        </div>
+                    </div>
 
+                    <div class="news-info">
+                        <div class="row news-img">
+                            <img alt="logo" class="media-object" data-src="holder.js/20x20" src="/images/notice_min.png" width="100%" height="100%">
+                        </div>
+                        <div class="row news-list">
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
+                                </div>
+                            </div>
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
+                                </div>
+                            </div>
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
+                                </div>
+                            </div>
+                            <div class="row news-item">
+                                <div class="col-md-8">
+                                    <span class="news-name">烟台大风预警</span>
+                                    <span class="news-des">今日烟台有6-7级大风</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="news-date">2017-3-13</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel panel-primary" style="border: solid 1px grey">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">产品推荐</h3>
-                        </div>
-                        <div class="panel-body" style="height:250px;">
-                            <div class="row">
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:230px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:50px;">
-                                            <h4>冬季吃什么最补</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:230px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:50px;">
-                                            <h4>冬季吃什么最补</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:230px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:50px;">
-                                            <h4>冬季吃什么最补</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" style="padding-left:0;">
-                                    <div class="thumbnail" style="height:230px;">
-                                        <img alt="100%x180" data-src="holder.js/100%x180" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMzE5IiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMxOSAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTVhM2ZkOTk0MjYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxNnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWEzZmQ5OTQyNiI+PHJlY3Qgd2lkdGg9IjMxOSIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSIxMTcuOTg0Mzc1IiB5PSIxMDcuMiI+MzE5eDIwMDwvdGV4dD48L2c+PC9nPjwvc3ZnPg==" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
-                                        <div style="height:50px;">
-                                            <h4>冬季吃什么最补</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div style="text-align: center;">
-                <p>版权所有 烟台海格力斯电子商务有限公司 Copyright@2016</p>
-                <p>经销商论坛 | 经销商进货 | 站长统计</p>
             </div>
         </div>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div class="container footer">
+            <div class="footer-content row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <img src="/images/qrcode.png" alt="">
                 </div>
             </div>
         </div>
         <script type="text/javascript">
-            //等价form表单中：<input type="hidden" name="_token" value="">
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
             $(document).ready(function () {
                 var mySwiper = new Swiper ('.swiper-container', {
                     direction: 'horizontal',
@@ -477,43 +486,6 @@
                     // 如果需要滚动条
                     scrollbar: '.swiper-scrollbar',
                 })
-            });
-            $("#login").click(function(){
-                $("#login_container").css("display","block");
-                $("#cover_main_container").css("display","block");
-                $("#close_login_container").click(function(){
-                    $("#login_container").css("display","none");
-                    $("#cover_main_container").css("display","none");
-                });
-            });
-            $("#btn_login").click(function(){
-                var username = $("input[name='username']").val();
-                var password = $("input[name='password']").val();
-                if(username == "" || password == ""){
-                    $("#tip_login").text("用户名或密码不能为空！");
-                    return false;
-                }
-                $.ajax({
-                    type:"POST",
-                    url:"{{ url('/login') }}",
-                    data:{
-                        username:username,
-                        password:password
-                    },
-                    success:function(data){
-                        if(data.status == 1){
-                            $("#tip_login").css("color","green").text("登陆成功！");
-                            @if(session('user')['role'] == "admin")
-                                location.href = "{{url("/nav")}}";
-                            @else
-                                location.href = "{{url("/goods")}}";
-                            @endif
-                        }else{
-                            $("#tip_login").css("color","red").text(data.info);
-                        }
-
-                    }
-                });
             });
         </script>
     </body>
